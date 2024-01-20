@@ -1,0 +1,56 @@
+3
+USE AnotherDatabase;
+
+CREATE TABLE MyTable (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) UNIQUE,
+    gender VARCHAR(10),
+    age INT,
+    contact VARCHAR(20)
+);
+
+INSERT INTO MyTable (name, gender, age, contact) VALUES
+    ('John', 'Male', 25, '1234567890'),
+    ('Jane', 'Female', 30, '9876543210');
+
+4
+SELECT * FROM MyTable WHERE age BETWEEN 20 AND 30;
+
+5
+DELETE FROM MyTable WHERE name LIKE '%张%';
+
+6
+SELECT AVG(age) AS average_age FROM MyTable;
+
+7
+SELECT * FROM MyTable WHERE age BETWEEN 20 AND 30 AND name LIKE '%张%' ORDER BY age DESC;
+
+8
+CREATE TABLE team (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    teamName VARCHAR(50) UNIQUE
+);
+
+CREATE TABLE score (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    teamid INT,
+    userid INT,
+    score INT,
+    FOREIGN KEY (teamid) REFERENCES team(id),
+    FOREIGN KEY (userid) REFERENCES user(id)
+);
+
+9
+SELECT user.*
+FROM user
+JOIN score ON user.id = score.userid
+JOIN team ON score.teamid = team.id
+WHERE team.teamName = 'ECNU' AND user.age < 20;
+
+10
+SELECT team.teamName, SUM(COALESCE(score.score, 0)) AS total_score
+FROM team
+LEFT JOIN score ON team.id = score.teamid
+WHERE team.teamName = 'ECNU'
+GROUP BY team.teamName;
+
