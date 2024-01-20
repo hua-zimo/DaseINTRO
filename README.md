@@ -23,41 +23,41 @@
 
 #### 1.获取豆瓣top10%科幻电影编号
 
-![image-20240119202541640](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240119202541640.png)
+![1.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/1.png)
 
 在对网页进行分析时我发现电影排行榜的信息存储在json格式的页面中。豆瓣在这里采用了前后端分离的架构，前端通过异步请求获取 JSON 数据，而不是直接在 HTML 中嵌入数据。
 
-![image-20240119203652638](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240119203652638.png)
+![2.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/2.png)
 
 1.设置伪装。目的是通过在HTTP请求头中提供一个虚假的用户代理信息，使服务器认为请求是从特定浏览器或设备发出的。这样做的主要目的有以下几点：通过设置伪装，可以让程序的请求头看起来像是来自真实浏览器的请求。这有助于模拟人类用户的访问行为，减小被豆瓣识别为爬虫的风险。
 
-![image-20240119203408790](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240119203408790.png)
+![3.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/3.png)
 
 2.找到排行榜的json页码规律，每页存储20个电影信息。循环遍历电影排行榜以获得电影编号。
 
-![image-20240119203719556](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240119203719556.png)
+![4.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/4.png)
 
 3.通过分析刚才的json信息，用xpath提取出想要的编码，写入编码.csv。
 
 #### 2.获取短评
 
-![image-20240119200700973](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240119200700973.png)
+![5.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/5.png)
 
 1.设置伪装。
 
-![image-20240119201356763](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240119201356763.png)
+![6.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/6.png)
 
 2.找到短评的页码规律。根据爬取到的科幻电影的编号，读取每部电影的编号数并将其填入url进行按页爬取。
 
-![image-20240119201909703](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240119201909703.png)
+![7.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/7.png)
 
 3.获取页面内容。
 
-![image-20240119204338425](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240119204338425.png)
+![8.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/8.png)
 
-![image-20240119204436285](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240119204436285.png)
+![9.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/9.png)
 
-![image-20240119214129894](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240119214129894.png)
+![10.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/10.png)
 
 4.用xpath提取出想要的信息，存储到短评.csv中。
 
@@ -65,17 +65,17 @@
 
 1.删除短评.csv中重复的用户主页链接，提取用户编号。
 
-![image-20240119205326604](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240119205326604.png)
+![11.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/11.png)
 
 2.找出用户看过的电影页面的页码规律，将用户编号填入完成url，存储到用户链接_新形式.csv中。
 
 3.循环遍历用户链接_新形式.csv，以获取每个观众的观影历史。
 
-![image-20240120095523532](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240120095523532.png)
+![12.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/12.png)
 
 4.提取每个观众的总观影数量，并计算已观看电影页面的循环次数，以进一步获取每个观众自己的科幻观影数量和科幻电影平均评分。
 
-![image-20240120095600644](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240120095600644.png)
+![13.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/13.png)
 
 5.用xpath提取已观看的电影类别是否为科幻，进行统计。
 
@@ -126,11 +126,11 @@
 
 ![评分者观影历史](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/ef51159a162ae26820d0c2daf6682aab1549afa6/img/%E8%AF%84%E5%88%86%E8%80%85%E8%A7%82%E5%BD%B1%E5%8E%86%E5%8F%B2.png)
 
-1. **观众科幻电影数量分布：**平均每位观众观看了约42部科幻电影；一半的观众观看的科幻电影数量少于26部；观众观看科幻电影数量的离散程度相对较大。
+1. **观众科幻电影数量分布：** 平均每位观众观看了约42部科幻电影；一半的观众观看的科幻电影数量少于26部；观众观看科幻电影数量的离散程度相对较大。
 
-2. **观众观看过的所有电影数量分布：**观众总观影数量的离散程度相对较大。
+2. **观众观看过的所有电影数量分布：** 观众总观影数量的离散程度相对较大。
 
-3. **观众对科幻电影的平均评分分布：**观众对科幻电影的平均评分相对较稳定。
+3. **观众对科幻电影的平均评分分布：** 观众对科幻电影的平均评分相对较稳定。
 
 4. **综合分析：**
 
@@ -179,9 +179,9 @@
 
 为了寻找更合适的*α*，使得最终评分能够反映观众的整体倾向的同时更准确地拟合实际数据，我选择使用线性回归模型，并通过网格搜索进行超参数调优。通过网格搜索，可以尝试不同的alpha值，从而找到在验证集上表现最好的超参数。通过上述操作选择出*α*，最终评分的计算得以在考虑观众整体喜好和经验的同时，更好地拟合实际数据，达到更合适的权衡。
 
-![image-20240120165043554](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240120165043554.png)
+![14.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/14.png)
 
-![image-20240120164308049](C:\Users\15010\AppData\Roaming\Typora\typora-user-images\image-20240120164308049.png)
+![15.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/9cc4be156878eb160aad9fbb46599f90a89e02a1/prtSC/15.png)
 
 在我的问题中，我发现最优参数*α*总是对应于取值范围中的最小值 。可能原因是特征值只选取了一个，模型过于简单导致。这并不意味着较小的*α*始终是最佳选择，因为具体选择需要根据实际需求和模型性能进行综合考虑。因此在这个情况下，我选择了[0.1，0.2，0.3，0.4，0.5]作为取值范围。
 
@@ -197,24 +197,24 @@
 
 ### 过程中遇到的问题
 
-**问题：**在数据获取阶段，爬虫频繁遭遇豆瓣的403错误。
+**问题：** 在数据获取阶段，爬虫频繁遭遇豆瓣的403错误。
 
-**原因：**该问题的发生主要源于爬虫对豆瓣服务器的请求频率超出了豆瓣的访问频率限制和数量限制，导致服务器拒绝进一步的访问。
+**原因：** 该问题的发生主要源于爬虫对豆瓣服务器的请求频率超出了豆瓣的访问频率限制和数量限制，导致服务器拒绝进一步的访问。
 
-**解决方法：**尽管我尝试了多种方法，包括使用time.sleep降低请求频率等等，但由于豆瓣逐步更新其反爬虫机制，最终未能完全解决这个问题。虽然我找到了一些高质量的代理IP，但由于数据量庞大且获取耗时较长，这些IP也很快被豆瓣封禁。
-
-
-
-**问题：**在特征工程阶段，数据处理的结果不够理想。
-
-**原因：**获取的数据数量不够；爬取的数据不够全面：首先我获取的短评是从热门界面进行爬取的，所以评分者倾向于阅片量充足的豆瓣活跃用户，阅片量偏低的普通用户样本量不够；其次，我应该再针对每位观众对top10%科幻电影的平均评分进行爬取和计算，而非简单地根据科幻电影平均评分进行计算，从而忽略了最重要的元素——科幻电影的质量的影响。
-
-**吸取的经验：**在之后的数据科学实验中，我需要在开始更完整地思考实验过程需要的数据。
+**解决方法：** 尽管我尝试了多种方法，包括使用time.sleep降低请求频率等等，但由于豆瓣逐步更新其反爬虫机制，最终未能完全解决这个问题。虽然我找到了一些高质量的代理IP，但由于数据量庞大且获取耗时较长，这些IP也很快被豆瓣封禁。
 
 
 
-**问题：**在数据建模阶段，计算最终评分时个体评分缺失。
+**问题：** 在特征工程阶段，数据处理的结果不够理想。
 
-**原因：**之前没有爬取需要的数据，且ip被封无法继续爬取。
+**原因：** 获取的数据数量不够；爬取的数据不够全面：首先我获取的短评是从热门界面进行爬取的，所以评分者倾向于阅片量充足的豆瓣活跃用户，阅片量偏低的普通用户样本量不够；其次，我应该再针对每位观众对top10%科幻电影的平均评分进行爬取和计算，而非简单地根据科幻电影平均评分进行计算，从而忽略了最重要的元素——科幻电影的质量的影响。
 
-**解决方法：**根据观众对科幻电影的评分规律随机生成了个体评分。
+**吸取的经验：** 在之后的数据科学实验中，我需要在开始更完整地思考实验过程需要的数据。
+
+
+
+**问题：** 在数据建模阶段，计算最终评分时个体评分缺失。
+
+**原因：** 之前没有爬取需要的数据，且ip被封无法继续爬取。
+
+**解决方法：** 根据观众对科幻电影的评分规律随机生成了个体评分。
