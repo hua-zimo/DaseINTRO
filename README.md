@@ -7,8 +7,7 @@
 
 科幻电影作为一种引人入胜的电影类型，深受观众喜爱。然而，作为一位热衷于科幻的影迷，我不禁注意到，不仅一部我喜爱的科幻电影在豆瓣上收到了我认为与其实际质量不符的评分。这引发我提出两个问题：低分高质量的现象是否普遍存在于科幻电影中？如果是的话，什么造成了观众对科幻电影评分存在一定的偏颇？在这个背景下，我迫切想了解问题的答案，以探讨观众对科幻电影评价的普遍趋势及其可能的解释。
 
-![compare_10%]([C:\Users\15010\Desktop\ECNU\sophomore\daseINTRO\final\final\img\compare_10%.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/main/img/compare_10%.png))
-
+[![compare_10%](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/main/img/compare_10%25.png)](https://github.com/hua-zimo/DaseINTRO/blob/ef51159a162ae26820d0c2daf6682aab1549afa6/img/compare_10%25.png)
 
 我爬取了豆瓣top10%的科幻电影和相对更受欢迎的剧情电影的评分并进行比较。初步数据分析表明，与剧情电影相比，科幻电影的评分整体偏低0.3分左右。由此可见，低分高质量的现象确实存在于科幻电影中。我猜测，科幻作为小众电影题材，观影门槛的提高可能是一个关键因素。
 
@@ -102,7 +101,8 @@
 
 1. **地区：** 
 
-   ![](C:\Users\15010\Desktop\ECNU\sophomore\daseINTRO\final\final\img\评分者地区分布.png)
+   ![评分者地区分布](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/main/img/%E8%AF%84%E5%88%86%E8%80%85%E5%9C%B0%E5%8C%BA%E5%88%86%E5%B8%83.png)
+
 
    1. **主要地区分布：** 北京、广东、上海等地区的评分者数量相对较多，占比较高。
    2. **区域多样性：** 评分者分布涵盖了全国各地，显示了科幻电影在不同地区的受欢迎程度。
@@ -110,7 +110,7 @@
 
 2. **观影时间**
 
-   ![](C:\Users\15010\Desktop\ECNU\sophomore\daseINTRO\final\final\img\评论时间分布.png)
+   ![评论时间分布](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/ef51159a162ae26820d0c2daf6682aab1549afa6/img/%E8%AF%84%E8%AE%BA%E6%97%B6%E9%97%B4%E5%88%86%E5%B8%83.png)
 
    1. **高峰年份：** 评论数量的高峰主要出现在2012年左右，这一时期可能与多部热门科幻电影上映、豆瓣平台用户增长等因素有关。
 
@@ -124,7 +124,7 @@
 | 总观影数量           | 2136.140271 | 1684     | 2114.130039 |
 | 科幻电影历史平均评分 | 3.571766    | 3.555556 | 0.503250    |
 
-![](C:\Users\15010\Desktop\ECNU\sophomore\daseINTRO\final\final\img\评分者观影历史.png)
+![评分者观影历史](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/ef51159a162ae26820d0c2daf6682aab1549afa6/img/%E8%AF%84%E5%88%86%E8%80%85%E8%A7%82%E5%BD%B1%E5%8E%86%E5%8F%B2.png)
 
 1. **观众科幻电影数量分布：**平均每位观众观看了约42部科幻电影；一半的观众观看的科幻电影数量少于26部；观众观看科幻电影数量的离散程度相对较大。
 
@@ -144,13 +144,13 @@
 
 数据归一化：采用Min-Max 归一化方法将科幻类别观影数量和总观影数量归一化到 [0, 1] 区间，分析两个数量之间的相对大小关系。
 
-![](C:\Users\15010\Desktop\ECNU\sophomore\daseINTRO\final\final\img\归一化散点图.png)
+![归一化散点图](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/ef51159a162ae26820d0c2daf6682aab1549afa6/img/%E5%BD%92%E4%B8%80%E5%8C%96%E6%95%A3%E7%82%B9%E5%9B%BE.png)
 
 线性拟合模型：y = 0.6158 * x + 0.0773
 
 不难看出拟合直线的斜率小于1，表示着观众总体观影数量相对较大，但其中包含的科幻电影观影数量相对较少。这可能暗示着科幻电影是一个相对小众的题材，只有部分观众对其有较高的兴趣。这与我之前的猜测相符合。
 
-![](C:\Users\15010\Desktop\ECNU\sophomore\daseINTRO\final\final\img\热力图.png)
+![热力图](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/ef51159a162ae26820d0c2daf6682aab1549afa6/img/%E7%83%AD%E5%8A%9B%E5%9B%BE.png)
 
 科幻电影历史平均评分与科幻电影历史评分、科幻观影数量的相关性系数分别为-0.22、-0.3，表明存在一定程度的负相关性。通常情况下，如果观众倾向于给予科幻电影较高的评分，那么科幻观影数量可能会略微减少，反之亦然。
 
@@ -173,7 +173,7 @@
 
 我先将*α*的值设为0.2，对观众的评分重新进行运算。（可惜的是之前爬取数据的时候没有考虑到这一步，因此这里的个体评分随机生成，主要由3-5分构成）
 
-![](C:\Users\15010\Desktop\ECNU\sophomore\daseINTRO\final\final\img\数据建模公式.png)
+![数据建模公式](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/ef51159a162ae26820d0c2daf6682aab1549afa6/img/%E6%95%B0%E6%8D%AE%E5%BB%BA%E6%A8%A1%E5%85%AC%E5%BC%8F.png)
 
 可以看出虽然4-5分段的评分大部分都下降了0.1-0.2分左右，但是3分段基本都上升0.1分左右。在科幻电影评分为3分段为主的背景下，这个公式很可能使得一部科幻电影的评分小幅度上升，结果比较理想。
 
@@ -187,7 +187,7 @@
 
 调整后的*α*=0.1对观众的评分重新运算后的结果如下图所示。
 
-![](C:\Users\15010\Desktop\ECNU\sophomore\daseINTRO\final\final\img\最终公式.png)
+![最终公式](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/ef51159a162ae26820d0c2daf6682aab1549afa6/img/%E6%9C%80%E7%BB%88%E5%85%AC%E5%BC%8F.png)
 
 最终评分的计算中，与初始的个体评分相比，不难观察到变化的缩小。相较于*α*=0.2 时，现在最终评分的计算更加充分地考虑了用户的实际评分。事实上，用户的实际评分是电影评分中最为重要且应当最为依赖的数据。
 
