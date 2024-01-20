@@ -3,7 +3,12 @@
 
 华子涵 10225501409
 
-![img](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/main/img/compare_10%.png)
+### 选题
+
+科幻电影作为一种引人入胜的电影类型，深受观众喜爱。然而，作为一位热衷于科幻的影迷，我不禁注意到，不仅一部我喜爱的科幻电影在豆瓣上收到了我认为与其实际质量不符的评分。这引发我提出两个问题：低分高质量的现象是否普遍存在于科幻电影中？如果是的话，什么造成了观众对科幻电影评分存在一定的偏颇？在这个背景下，我迫切想了解问题的答案，以探讨观众对科幻电影评价的普遍趋势及其可能的解释。
+
+![compare_10%]([C:\Users\15010\Desktop\ECNU\sophomore\daseINTRO\final\final\img\compare_10%.png](https://raw.githubusercontent.com/hua-zimo/DaseINTRO/main/img/compare_10%.png))
+
 
 我爬取了豆瓣top10%的科幻电影和相对更受欢迎的剧情电影的评分并进行比较。初步数据分析表明，与剧情电影相比，科幻电影的评分整体偏低0.3分左右。由此可见，低分高质量的现象确实存在于科幻电影中。我猜测，科幻作为小众电影题材，观影门槛的提高可能是一个关键因素。
 
